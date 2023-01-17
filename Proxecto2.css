@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New";
+  font-weight: normal;
+  background: linear-gradient(
+    180deg,
+    rgba(31, 24, 144, 1) 0%,
+    rgba(48, 3, 96, 1) 20%,
+    rgba(213, 0, 255, 1) 50%,
+    rgba(48, 3, 96, 1) 90%,
+    rgba(31, 24, 144, 1) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 8.5rem;
+  margin-top: 1rem;
+}
+
+.timer {
+  box-sizing: border-box;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  border-radius: 30px;
+  width: 10rem;
+  height: 1.75rem;
+  font-family: "Montserrat", sans-serif;
+  color: rgba(48, 3, 96, 1);
+  background: greenyellow;
+  box-shadow: 0px 0px 2px 0px gray;
+  background: radial-gradient(
+    circle,
+    rgb(250, 250, 250) 0%,
+    rgb(213, 0, 255) 100%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.conta {
+  box-sizing: border-box;
+  border-radius: 30px;
+  width: 10rem;
+  height: 1.75rem;
+  font-family: "Montserrat", sans-serif;
+  color: rgba(48, 3, 96, 1);
+  background: greenyellow;
+  box-shadow: 0px 0px 2px 0px gray;
+  background: radial-gradient(
+    circle,
+    rgb(250, 250, 250) 0%,
+    rgb(213, 0, 255) 100%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.start.start1 {
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: radial-gradient(
+    circle,
+    rgb(250, 250, 250) 0%,
+    rgb(153, 255, 0) 100%
+  );
+  box-shadow: 0px 0px 2px 1px gray;
+  position: absolute;
+  z-index: 1;
+  right: 5.4%;
+  bottom: 29.5%;
+  width: 85%;
+  height: 30%;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 5.5px;
+  color: rgb(59, 3, 61);
+  margin: 8px;
+  padding: 0 10px;
+  line-height: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main {
+  box-sizing: border-box;
+  border-color: rgba(235, 229, 235, 0.064);
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+}
+
+.card {
+  width: 4.7rem;
+  height: 4.7rem;
+  perspective: 15rem;
+  margin: 0.05rem;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: radial-gradient(
+    circle,
+    rgba(58, 12, 163, 1) 0%,
+    rgba(67, 97, 238, 1) 50%,
+    rgba(76, 201, 240, 1) 100%
+  );
+  place-content: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  backface-visibility: hidden;
+  user-select: none;
+}
+
+.front {
+  font-size: 1.5rem;
+}
+
+.back {
+  font-size: 3rem;
+  background: radial-gradient(
+    circle,
+    rgba(76, 201, 240, 1) 0%,
+    rgba(67, 97, 238, 1) 50%,
+    rgba(58, 12, 163, 1) 100%
+  );
+  transform: rotateY(180deg);
+}
+
+.card.flipped .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+footer p:first-of-type {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 5.5px;
+  color: greenyellow;
+}
+
+footer p:last-child {
+  color: rgb(255, 0, 230);
+}
+
+/* USO DE MEDIA QUERIES PARA ADAPTAR A DIFERENTES PANTALLAS */
+/* PANTALLAS DE TELÉFONO MÓVIL */
+
+@media (min-width: 350px) {
+  .card {
+    width: 5rem;
+    height: 5rem;
+    perspective: 10rem;
+    margin: 0.05rem;
+  }
+}
+
+@media (min-width: 380px) {
+  .card {
+    width: 5.5rem;
+    height: 5.5rem;
+    perspective: 15rem;
+    margin: 0.05rem;
+  }
+
+  .back {
+    font-size: 3.5rem;
+  }
+}
+
+/* PANTALLAS DE TABLET */
+
+@media (min-width: 440px) {
+  .card {
+    width: 6rem;
+    height: 6rem;
+    perspective: 18rem;
+    margin: 0.07rem;
+  }
+
+  .back {
+    font-size: 3.5rem;
+  }
+
+  footer {
+    height: 3rem;
+  }
+}
+
+@media (min-width: 490px) {
+  html {
+    width: 440px;
+    margin: auto auto;
+    background-color: rgb(251, 249, 249);
+  }
+  body {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px black;
+  }
+  .start.start1 {
+    right: 23%;
+    bottom: 23%;
+    width: 50%;
+    height: 35%;
+  }
+}
+
+@media (min-width: 650px) {
+  html {
+    width: auto;
+  }
+  .card {
+    width: 9.5rem;
+  }
+  .front {
+    font-size: 2rem;
+  }
+  .back {
+    font-size: 4.5rem;
+  }
+}
+
+/* PANTALLAS ORDENADOR */
+
+@media (min-width: 768px) {
+  header {
+    width: 100vw;
+    margin-left: 4rem;
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card {
+    width: 11rem;
+  }
+}
+
+@media (min-width: 890px) {
+  .start.start1 {
+    right: 24%;
+    bottom: 20.5%;
+    width: 50%;
+    height: 37%;
+    font-size: 26px;
+  }
+  .card {
+    width: 13rem;
+    height: 6.5rem;
+  }
+
+  footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (min-width: 950px) {
+  header {
+    margin-left: 6rem;
+    margin-right: 8rem;
+  }
+}
+
+@media (min-width: 1040px) {
+  .card {
+    width: 15rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .start.start1 {
+    right: 24.5%;
+    bottom: 16.5%;
+    width: 50%;
+    height: 40%;
+    font-size: 30px;
+  }
+  .card {
+    width: 17rem;
+    height: 7rem;
+    perspective: 40rem;
+  }
+  .front {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  html {
+    width: 1300px;
+    margin: 0 auto;
+    background-color: rgb(251, 249, 249);
+  }
+  body {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px black;
+  }
+  .card {
+    width: 19rem;
+    height: 7.5rem;
+  }
+}
