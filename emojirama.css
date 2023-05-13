@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(31, 24, 144, 1) 0%,
+    rgba(48, 3, 96, 1) 20%,
+    rgba(213, 0, 255, 1) 50%,
+    rgba(48, 3, 96, 1) 90%,
+    rgba(31, 24, 144, 1) 100%
+  );
+  font-weight: normal;
+  font-family: "Courier New";
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: 8.5rem;
+  margin-top: 1rem;
+}
+
+.timer,
+.conta,
+#start-button {
+  width: 10rem;
+  height: 1.75rem;
+  box-sizing: border-box;
+  border-radius: 30px;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  background: radial-gradient(
+    circle,
+    rgb(250, 250, 250) 0%,
+    rgb(213, 0, 255) 100%
+  );
+  box-shadow: 0px 0px 1px 1px rgba(117, 70, 139, 0.737);
+  font-family: "Montserrat", sans-serif;
+  color: rgba(48, 3, 96, 1);
+  text-align: center;
+  line-height: 1.75rem;
+}
+
+#startbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.start-content,
+.start.start1 {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 3px solid greenyellow;
+  border-radius: 4px;
+  background-color: rgba(68, 0, 70, 0.849);
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.start-content {
+  max-width: 80vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+.instructions {
+  margin: 15px;
+  font-family: "Courier New";
+}
+
+.instructions p:last-child {
+  margin-top: 15px;
+}
+
+.start.start1 {
+  z-index: 1;
+  position: absolute;
+  width: 80vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: sans-serif;
+  letter-spacing: 5.5px;
+  color: rgb(255, 255, 255);
+}
+
+.resetbutton {
+  display: none;
+}
+
+.start1 .resetbutton {
+  display: block;
+  width: 10rem;
+  height: 1.75rem;
+  margin: 15px auto;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: radial-gradient(circle, rgb(245, 243, 243), greenyellow);
+  font-family: "Montserrat", sans-serif;
+  color: rgba(48, 3, 96, 1);
+}
+
+main {
+  box-sizing: border-box;
+  border-color: rgba(235, 229, 235, 0.064);
+  z-index: 0;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  position: relative;
+}
+
+.card {
+  width: 4.7rem;
+  height: 4.7rem;
+  perspective: 15rem;
+  margin: 0.05rem;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  backface-visibility: hidden;
+  user-select: none;
+  background: radial-gradient(
+    circle,
+    rgba(58, 12, 163, 1) 0%,
+    rgba(67, 97, 238, 1) 50%,
+    rgba(76, 201, 240, 1) 100%
+  );
+}
+
+.front {
+  font-size: 1.5rem;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: radial-gradient(
+    circle,
+    rgba(76, 201, 240, 1) 0%,
+    rgba(67, 97, 238, 1) 50%,
+    rgba(58, 12, 163, 1) 100%
+  );
+  font-size: 3rem;
+}
+
+.card.flipped .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 5rem;
+}
+
+footer p:first-of-type {
+  letter-spacing: 5.5px;
+  font-family: "Montserrat", sans-serif;
+  color: greenyellow;
+}
+
+footer p:last-child {
+  color: rgb(255, 0, 230);
+}
+
+/* USO DE MEDIA QUERIES PARA ADAPTAR A DIFERENTES PANTALLAS */
+/* PANTALLAS DE TELÉFONO MÓVIL */
+
+@media (min-width: 350px) {
+  .card {
+    width: 5rem;
+    height: 5rem;
+    perspective: 10rem;
+    margin: 0.05rem;
+  }
+}
+
+@media (min-width: 380px) {
+  .card {
+    width: 5.5rem;
+    height: 5.5rem;
+    perspective: 15rem;
+    margin: 0.05rem;
+  }
+
+  .back {
+    font-size: 3.5rem;
+  }
+}
+
+/* PANTALLAS DE TABLET */
+
+@media (min-width: 440px) {
+  .card {
+    width: 6rem;
+    height: 6rem;
+    perspective: 18rem;
+    margin: 0.07rem;
+  }
+
+  .back {
+    font-size: 3.5rem;
+  }
+
+  footer {
+    height: 3rem;
+  }
+}
+
+@media (min-width: 490px) {
+  html {
+    width: 440px;
+    margin: auto auto;
+    background-color: rgb(251, 249, 249);
+  }
+  body {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px black;
+  }
+  .start.start1 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 650px) {
+  html {
+    width: auto;
+  }
+  .card {
+    width: 9.5rem;
+  }
+  .front {
+    font-size: 2rem;
+  }
+  .back {
+    font-size: 4.5rem;
+  }
+}
+
+/* PANTALLAS ORDENADOR */
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-left: 4rem;
+    margin-right: 5rem;
+  }
+
+  .card {
+    width: 11rem;
+  }
+}
+
+@media (min-width: 890px) {
+  .start-content {
+    max-width: 60vw;
+    font-size: 20px;
+  }
+
+  .start.start1 {
+    max-width: 50vw;
+    min-height: 20vh;
+    font-size: 26px;
+  }
+
+  .card {
+    width: 13rem;
+    height: 6.5rem;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 950px) {
+  header {
+    margin-left: 6rem;
+    margin-right: 8rem;
+  }
+}
+
+@media (min-width: 1040px) {
+  .card {
+    width: 15rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .start.start1 {
+    font-size: 30px;
+  }
+
+  .card {
+    width: 17rem;
+    height: 7rem;
+    perspective: 40rem;
+  }
+
+  .front {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  html {
+    width: 1300px;
+    margin: 0 auto;
+    background-color: rgb(251, 249, 249);
+  }
+  body {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px black;
+  }
+  .card {
+    width: 19rem;
+    height: 7.5rem;
+  }
+}
